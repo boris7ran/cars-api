@@ -37,7 +37,7 @@ class CarsController extends Controller
     {
         $car = new Car();
 
-        //$this->validate($request, Car::STORE_RULES);
+        $this->validate($request, Car::STORE_RULES);
 
         $car->brand = $request->input('brand');
         $car->model = $request->input('model');
@@ -85,7 +85,7 @@ class CarsController extends Controller
     {
         $car = Car::find($id);
 
-        //$this->validate($request, Car::STORE_RULES);
+        $this->validate($request, Car::STORE_RULES);
 
         $car->brand = $request->input('brand');
         $car->model = $request->input('model');
