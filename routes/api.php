@@ -13,6 +13,14 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::resource('cars', 'CarsController');
+Route::post('/login', 'Auth\LoginController@authenticate');
 
+Route::middleware('jwt')->get('/cars', 'CarsController@index');
 
+Route::middleware('jwt')->post('/cars', 'CarsController@store');
+
+Route::middleware('jwt')->get('/cars/{id}', 'CarsController@show');
+
+Route::middleware('jwt')->put('/cars/{id}', 'CarsController@update');
+
+Route::middleware('jwt')->delete('/cars/{id}', 'CarsController@destroy');
