@@ -15,6 +15,8 @@ use Illuminate\Http\Request;
 
 Route::post('/login', 'Auth\LoginController@authenticate');
 
+Route::post('/register', 'Auth\RegisterController@create');
+
 Route::middleware('jwt')->get('/cars', 'CarsController@index');
 
 Route::middleware('jwt')->post('/cars', 'CarsController@store');
