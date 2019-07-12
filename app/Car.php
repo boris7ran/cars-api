@@ -10,9 +10,9 @@ class Car extends Model
         'brand' => 'required | min:2',
         'model' => 'required | min:2',
         'year' => 'required',
-        'maxSpeed' => 'between:20,300',
+        'maxSpeed' => 'between:20,300 | integer',
         'isAutomatic' => 'required',
         'engine' => 'required',
-        'numberOfDoors' => 'required | between:2,5'
+        'numberOfDoors' => 'required | between:2,5 | integer'
     ];
 }
